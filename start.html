@@ -244,7 +244,9 @@
                                                                 <td>ALFANUMÉRICO</td>
                                                                 <td>64</td>
                                                                 <td>SIM</td>
-                                                                <td>Valor variável e retornado a cada requisição</td>
+                                                                <td>Identificação da empresa
+                                                                    cadastrado na aplicação. Será fornecida pela
+                                                                    Adapta.</td>
                                                             </tr>
                                                             <tr>
                                                                 <th>firstname</th>
@@ -333,7 +335,7 @@
 
                                 <section id="exemplopost-section" class="doc-section">
                                     <h2 class="section-title">Exemplos de requisições do tipo POST</h2>
-                                    <div id="sale" class="section-block">
+                                    <div id="postsale" class="section-block">
                                         <div class="d-flex pb-1 mb-3">
                                             <div class="bg-dark d-flex align-items-center text-success">
                                                 <p class="m-3">POST</p>
@@ -444,7 +446,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div id="saleretorno" class="section-block">
+                                        <div id="postsaleretorno" class="section-block">
                                             <div class="code-block">
                                                 <h6>Retorno da Requisição Sale</h6>
                                                 <pre><code class="language-javascript">{
@@ -499,6 +501,205 @@
                                                 </div>                                                                                            
                                 </section>
                                 <!--//doc-section-->
+                                <section id="exemploget-section" class="doc-section">
+                                    <h2 class="section-title">Exemplos de requisições do tipo GET</h2>
+                                    <div id="getsale" class="section-block">
+                                        <div class="d-flex pb-1 mb-3">
+                                            <div class="bg-dark d-flex align-items-center text-success">
+                                                <p class="m-3">GET</p>
+                                            </div>
+                                            <div class="bg-secondary d-flex align-items-center text-warning">
+                                                <p class="m-3">/sale/seller</p>
+                                            </div>
+                                        </div>
+                                        <h6>Requisição SALE</h6>
+                                        <p>A requisição do tipo GET para o serviço de Sale serve para fazer consulta das vendas realizadas pelo credenciado em questao.
+                                        </p>
+                                        <h6>Requisição GET de exemplo</h6>
+                                        <pre><code class="language-javascript">?token=AE2480142F7B4820A0CB3D5C4706F706AEDE8417062F1144E3F60AC09EC88C60&ipAddress=localhost&dateStart=2019-03-01&dateEnd=2019-05-24
+</code></pre>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>PARÂMETRO</th>
+                                                        <th>TIPO</th>
+                                                        <th>TAMANHO</th>
+                                                        <th>OBRIGATÓRIO</th>
+                                                        <th>DESCRIÇÃO</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>token</th>
+                                                        <td>ALFANUMÉRICO</td>
+                                                        <td>64</td>
+                                                        <td>SIM</td>
+                                                        <td>Valor variável e retornado a cada requisição.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>ipAddress</th>
+                                                        <td>ALFANUMÉRICO</td>
+                                                        <td>255</td>
+                                                        <td>SIM</td>
+                                                        <td>Endereço do IPAdress de quem está acessando</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>dateStart</th>
+                                                        <td>DATE</td>
+                                                        <td>10</td>
+                                                        <td>SIM</td>
+                                                        <td>Data de inicio da pesquisa, no formato AAAA-MM-DD</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>dateEnd</th>
+                                                        <td>DATE</td>
+                                                        <td>10</td>
+                                                        <td>SIM</td>
+                                                        <td>Data de fim da pesquisa, no formato AAAA-MM-DD</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div id="getsaleretorno" class="section-block">
+                                            <div class="code-block">
+                                                <h6>Retorno da Requisição SALE</h6>
+                                                <pre><code class="language-javascript">{
+"token": "E7148C80FB49BFF260A91FA307758F053ED243AF7D967CEA0F52E62922A1354B",
+"hasError": false,
+"error": null,
+"sales": [
+    {
+        "documentNo": "99999999",
+        "saleCurrency": "BRL",
+        "saleAmount": 500,
+        "saleCashback": 25,
+        "localTime": 1558017652987,
+        "countryIsoCode": "BR",
+        "accountNo": "0550000002851",
+        "accountName": "cliente22s",
+        "currency": "BRL",
+        "cashback": 25,
+        "cityName": null
+},
+</code></pre>
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>PARÂMETRO</th>
+                                                                <th>TIPO</th>
+                                                                <th>TAMANHO</th>
+                                                                <th>OBRIGATÓRIO</th>
+                                                                <th>DESCRIÇÃO</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>token</th>
+                                                                <td>ALFANUMÉRICO</td>
+                                                                <td>64</td>
+                                                                <td>SIM</td>
+                                                                <td>Valor variável e retornado a cada requisição</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>haserror</th>
+                                                                <td>TEXTO</td>
+                                                                <td>5</td>
+                                                                <td>SIM</td>
+                                                                <td>Retornará "TRUE" se houver erros na requisição</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>error</th>
+                                                                <td>ALFANUMÉRICO</td>
+                                                                <td>255</td>
+                                                                <td>SIM</td>
+                                                                <td>Se houver erros, retornarão nesta chamada</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>documentNo</th>
+                                                                <td>ALFANUMÉRICO</td>
+                                                                <td>50</td>
+                                                                <td>NÃO</td>
+                                                                <td>Será retornado o número da venda, se foi informado algum no cadastro</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>saleCurrency</th>
+                                                                <td>TEXTO</td>
+                                                                <td>3</td>
+                                                                <td>SIM</td>
+                                                                <td>Código da moeda que a compra foi registrada</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>saleAmount</th>
+                                                                <td>ALFANUMÉRICO</td>
+                                                                <td>255</td>
+                                                                <td>SIM</td>
+                                                                <td>Retornará o valor total da venda</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>saleCashback</th>
+                                                                <td>ALFANUMÉRICO</td>
+                                                                <td>50</td>
+                                                                <td>SIM</td>
+                                                                <td>Valor a ser pago para a aplicação pelo uso do Cashback</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>localTime</th>
+                                                                <td>ALFANUMÉRICO</td>
+                                                                <td>255</td>
+                                                                <td>SIM</td>
+                                                                <td>Timestamp da data que a venda foi registrada</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>countryIsoCode</th>
+                                                                <td>TEXTO</td>
+                                                                <td>2</td>
+                                                                <td>SIM</td>
+                                                                <td>País onde a venda foi registrada</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>accountNo</th>
+                                                                <td>NUMÉRICO</td>
+                                                                <td>255</td>
+                                                                <td>SIM</td>
+                                                                <td>Retornará o número da conta</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>accountName</th>
+                                                                <td>ALFANUMÉRICO</td>
+                                                                <td>255</td>
+                                                                <td>SIM</td>
+                                                                <td>Retornará o nome da conta que a venda pertence</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>currency</th>
+                                                                <td>TEXTO</td>
+                                                                <td>3</td>
+                                                                <td>SIM</td>
+                                                                <td>Código da moeda do cadastro do credenciado</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>cashback</th>
+                                                                <td>ALFANUMÉRICO</td>
+                                                                <td>255</td>
+                                                                <td>SIM</td>
+                                                                <td>Valor a pagar para o app pelo registro da compra</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>cityName</th>
+                                                                <td>TEXTO</td>
+                                                                <td>255</td>
+                                                                <td>NÃO</td>
+                                                                <td>Informação cadastral do cliente</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>                                                                                            
+                                </section>
+                                <!--//doc-section-->
+
+
                                     <section id="certificados-section" class="doc-section">
                                         <h2 class="certificados-title">Certificados e segurança</h2>
                                         <div id="certificados" class="section-block">
@@ -579,9 +780,16 @@
                                             - POST</a>
                                         <nav class="doc-sub-menu nav flex-column">
                                             <a class="nav-link scrollto" href="#authprivada">AuthPrivada</a>
-                                            <a class="nav-link scrollto" href="#sale">Sale</a>                                            
+                                            <a class="nav-link scrollto" href="#postsale">Sale</a>                                            
                                         </nav>
                                         <!--//nav-->
+                                        <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                            <a class="nav-link scrollto" href="#exemploget-section">Exemplos de requisições
+                                                - GET</a>
+                                            <nav class="doc-sub-menu nav flex-column">
+                                                <a class="nav-link scrollto" href="#getsale">Sale</a>                                          
+                                            </nav>
+                                            <!--//nav-->
                                 <nav id="doc-menu" class="nav doc-menu flex-column sticky">
                                     <a class="nav-link scrollto" href="#certificados-section">Certificados &
                                         Segurança</a>
